@@ -1,0 +1,16 @@
+.main {
+  background-color: var(--color-other-bg);
+  flex: 1;
+  min-width: 0%;
+  height: 100vh;
+}
+
+.workspace {
+  overflow: auto;
+  position: relative;
+  height: 100%;
+}
+
+.home {
+  padding: 24px;
+}

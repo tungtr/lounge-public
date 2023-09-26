@@ -1,0 +1,168 @@
+.common-bg {
+  background-color: var(--color-primary-50);
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  width: 100vw; height: 100vh;
+}
+
+.image-container {
+  border: 3.5px solid var(--color-primary-50);
+  cursor: pointer;
+}
+.image {
+  border: 2px solid white;
+  filter: brightness(1);
+  object-fit: cover;
+  user-select: none;
+
+  transition: border-width 100ms, filter 100ms;
+}
+  .image-container:hover .image {
+    border-width: 4px;
+    filter: brightness(0.8);
+  }
+  .image-container:active .image {
+    filter: brightness(0.7);
+  }
+
+.avatar.image-container, .avatar.image {
+  border-radius: 50%;
+}
+.avatar.image {
+  width: 102px; height: 102px;
+}
+.cover.image-container {
+  border-radius: 12px;
+  width: 100%;
+}
+.cover.image {
+  border-radius: 12px;
+  width: 100%; height: 96px;
+}
+  .image-container:hover .cover.image {
+    border-radius: 10px;
+  }
+
+.chip-container {
+  padding: 2px 0 0 0;
+
+  transition: padding 100ms;
+}
+  .chip-container.inactive:hover {
+    padding: 0 0 2px 0;
+  }
+.chip {
+  border-radius: 8px;
+  padding: 8px 12px 8px 12px;
+
+  transition: background-color 100ms, border 100ms, color 100ms;
+}
+  .chip.active {
+    background-color: var(--color-primary-50);
+    border: 2px solid var(--color-primary-50);
+    color: white;
+  }
+  .chip.inactive {
+    border: 2px solid var(--color-primary-30);
+    color: var(--color-primary-30);
+    cursor: pointer;
+  }
+  .chip-container.inactive:hover .chip.inactive {
+    background-color: var(--color-primary-30);
+    border-color: var(--color-primary-30);
+    color: white;
+  }
+  .chip-container.inactive:active .chip.inactive {
+    background-color: var(--color-primary-40);
+    border-color: var(--color-primary-40);
+  }
+
+.utility-button-container {
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  color: black;
+  width: 32px; height: 32px;
+}
+  .utility-button-container:hover {
+    background-color: var(--color-other-bg);
+  }
+  .utility-button-container:active {
+    background-color: var(--color-neutral-10);
+  }
+  .utility-button {
+    width: 24px; height: 24px;
+
+    transition: width 100ms, height 100ms;
+  }
+    .utility-button-container:hover .utility-button {
+      width: 28px; height: 28px;
+    }
+
+.divider {
+  background-color: var(--color-neutral-10);
+  border-radius: 50%;
+  width: 100%; height: 1px;
+}
+
+.link {
+  color: var(--color-primary-50);
+  cursor: pointer;
+  text-decoration: underline;
+
+  transition: color 100ms;
+}
+  .link:hover {
+    color: var(--color-primary-30);
+  }
+  .link:active {
+    color: var(--color-primary-70);
+  }
+
+.navlink {
+  background-color: white;
+  border-radius: 8px;
+  color: var(--color-neutral-50);
+  padding-left: 0;
+
+  transition: background-color 100ms, padding 100ms;
+}
+  .navlink:hover {
+    background-color: var(--color-other-bg);
+    padding-left: 12px;
+  }
+  .navlink:active {
+    background-color: var(--color-neutral-10);
+    padding-left: 12px;
+  }
+
+.overflow-text-container {
+  overflow-x: hidden;
+  white-space: nowrap;
+  width: 100%;
+}
+  .overflow-text {
+    overflow-x: hidden;
+      text-overflow: ellipsis;
+  }
+
+.option-button {
+  background-color: white;
+  border-radius: 4px;
+  border: 2px solid var(--color-neutral-10);
+  color: var(--color-neutral-50);
+  cursor: pointer;
+  padding: 16px;
+
+  transition: border-color 100ms, color 100ms, background-color 200ms;
+}
+  .option-button:hover {
+    border-color: var(--color-neutral-30);
+    color: black;
+  }
+  .option-button:active {
+    background-color: var(--color-other-bg);
+  }

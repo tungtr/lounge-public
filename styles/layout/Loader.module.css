@@ -1,0 +1,39 @@
+@keyframes slide {
+  0%, 85%, 100% {
+    left: 0%; top: 0%;
+  }
+  
+  10%, 25%{
+    left: 100%; top: 0%;  
+  }
+
+  35%, 50% {
+    left: 100%; top: 100%;
+  }
+
+  60%, 75% {
+    left: 0%; top: 100%;
+  }
+};
+
+.container {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader {
+  position: relative;
+  rotate: 45deg;
+  width: 28px; height: 28px;
+}
+.bead {
+  background-color: var(--color-primary-50);
+  border-radius: 4px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 24px; height: 24px;
+
+  animation-duration: 3s;
+  animation-name: slide;
+  animation-iteration-count: infinite;
+}

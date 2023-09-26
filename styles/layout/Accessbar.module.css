@@ -1,0 +1,62 @@
+.accessbar {
+  background-color: white;
+  border-left: 2px solid var(--color-other-bg);
+  padding: 16px;
+    padding-right: 0px;
+  min-width: 96px; max-width: 96px;
+}
+
+.itemContainer {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  padding-right: 16px;
+}
+  .item {
+    border-radius: 20px;
+    display: flex;
+      align-items: center;
+      justify-content: center;
+    width: 64px; height: 64px;
+
+    transition: background-color 200ms;
+  }
+    .itemContainer:hover .item {
+      background-color: var(--color-other-bg);
+    }
+    .itemContainer:active .item {
+      background-color: var(--color-neutral-10);
+    }
+  .image {
+    border-radius: 50%;
+    width: 44px; height: 44px;
+    user-select: none;
+
+    transition: width 200ms, height 200ms;
+  }
+      .itemContainer:hover .image {
+        width: 48px; height: 48px;
+      }
+  .indicator {
+    background-color: var(--color-primary-30);
+    border-radius: 2px;
+    position: absolute;
+      left: 120%; top: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 8px; height: 8px;
+
+    transition: left 200ms;
+  }
+    .itemContainer:hover .indicator {
+      left: 90%; 
+    }
+
+    
+
+/* Mobile */
+@media screen and (max-width: 520px) {
+  .accessbar {
+    display: none;
+  }
+}

@@ -1,0 +1,89 @@
+.type-display-1 {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.type-display-2 {
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.type-heading-1 {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.type-heading-2 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.type-heading-3 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.type-subHeading {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.type-label-1 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.type-label-2 {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.type-label-3 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.type-body-1 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.type-body-2 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.type-body-3 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+.type-tag-1 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.type-tag-2 {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+.type-button {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 130%;
+}

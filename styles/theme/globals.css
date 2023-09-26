@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* Colour */
+  --color-other-bg: #F5F5F5;
+
+  --color-neutral-10: #E7E4EB;
+  --color-neutral-20: #C9C3D2;
+  --color-neutral-30: #B2AEB8;
+  --color-neutral-40: #95909C;
+  --color-neutral-50: #7B7684;
+  --color-neutral-60: #615D69;
+  --color-neutral-70: #46424D;
+  --color-neutral-80: #302D34;
+  --color-neutral-90: #19181B;
+
+  --color-primary-10: #E5DEF8;
+  --color-primary-20: #BBA7F5;
+  --color-primary-30: #926FF7;
+  --color-primary-40: #7A4FF6;
+  --color-primary-50: #6D3CF8; /* base */
+  --color-primary-60: #5C2FDB;
+  --color-primary-70: #3C218B;
+  --color-primary-80: #2F215B;
+  --color-primary-90: #17102C;
+
+  --color-success-10: #ECFFD9;
+  --color-success-20: #D2F8AD;
+  --color-success-30: #B9F67D;
+  --color-success-40: #9EE755;
+  --color-success-50: #7AC134;
+  --color-success-60: #659F2C;
+  --color-success-70: #3B6422;
+  --color-success-80: #274117;
+  --color-success-90: #17290B;
+};

@@ -1,0 +1,34 @@
+/* Desktop */
+.topbar {
+  background-color: white;
+  padding: 0px 24px;
+  width: 100%; height: 96px;
+}
+
+.sidebar {
+  background-color: white;
+  padding: 96px 32px 32px 32px;
+  position: absolute;
+  width: 100vw; height: 100vh;
+  z-index: 500;
+
+  transition: left 500ms;
+}
+  .sidebar.opened {
+    left: 0; top: 0;
+  }
+  .sidebar.closed {
+    left: -100vw; top: 0;
+  }
+
+/* Mobile */
+@media screen and (max-width: 520px) {
+
+}
+
+/* Not mobile */
+@media screen and (min-width: 481px) {
+  .sidebar {
+    display: none;
+  }
+}
