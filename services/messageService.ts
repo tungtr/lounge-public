@@ -18,7 +18,7 @@ import { showNotification } from '@utils/helpers/notification';
 export const getMessageList = async (data: GetMessageListITF, dispatch: AppDispatch) => {
   try {
     const apiResponse = await axios.get(
-      `${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/lounge/message`,
+      `${NEXT_PUBLIC_CLIENT_HOST}/api/lounge/message`,
       { params: { loungeId: data.loungeId, offset: data.offset, isPrior: data.isPrior } }
     );
     if (apiResponse.data.status === HttpStatusCodes.OK) {
@@ -37,7 +37,7 @@ export const getMessageList = async (data: GetMessageListITF, dispatch: AppDispa
 export const getMessageListTotal = async (data: GetMessageListTotalITF, dispatch: AppDispatch) => {
   try {
     const apiResponse = await axios.get(
-      `${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/lounge/message/total`,
+      `${NEXT_PUBLIC_CLIENT_HOST}/api/lounge/message/total`,
       { params: data }
     );
     if (apiResponse.data.status === HttpStatusCodes.OK) {
@@ -61,7 +61,7 @@ export const sendMessage = async (data: SendMessageITF) => {
       });
     } else {
       await axios.post(
-        `${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/lounge/message`,
+        `${NEXT_PUBLIC_CLIENT_HOST}/api/lounge/message`,
         { ...data, userId: JSON.parse(localUser)._id }
       );
     }
@@ -83,7 +83,7 @@ export const reactToMessage = async (data: ReactToMessageITF) => {
     const localUser = localStorage.getItem('lounge-user');
     if (localUser) {
       await axios.patch(
-        `${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/lounge/message/react`,
+        `${NEXT_PUBLIC_CLIENT_HOST}/api/lounge/message/react`,
         data
       );
     }

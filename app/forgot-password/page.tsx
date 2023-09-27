@@ -47,7 +47,7 @@ const ForgotPassword = ({
     setIsButtonLoading(true);
 
     try {
-      const apiResponse = await axios.post(`${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/auth/password/reset`, { token, password: data.password });
+      const apiResponse = await axios.post(`${NEXT_PUBLIC_CLIENT_HOST}/api/auth/password/reset`, { token, password: data.password });
       if (apiResponse.data.status === HttpStatusCodes.OK) {
         showNotification({
           title,

@@ -87,7 +87,7 @@ const UpdateTemplate = ({
   }]);
   const getSubjectList = async () => {
     try {
-      const apiResponse = await axios.get(`${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/subject`);
+      const apiResponse = await axios.get(`${NEXT_PUBLIC_CLIENT_HOST}/api/subject`);
       setSubjectList(apiResponse.data.subjectList);
     } catch (error: any) {
       console.log(error);

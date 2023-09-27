@@ -26,10 +26,10 @@ export const POST = async (request: NextRequest) => {
       const user = await User.create({ email, username, password: hashedPassword, avatar, isVerified: false });
 
       // Create new history
-      await axios.post(`${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/history`, { userId: user._id.toString() })
+      await axios.post(`${NEXT_PUBLIC_CLIENT_HOST}/api/history`, { userId: user._id.toString() })
       
       // Send verification email
-      await axios.post(`${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/auth/verify/send`, { email });
+      await axios.post(`${NEXT_PUBLIC_CLIENT_HOST}/api/auth/verify/send`, { email });
 
       const status = HttpStatusCodes.CREATED;
       return NextResponse.json({ message: 'Sign-up successful', status, user }, { status });

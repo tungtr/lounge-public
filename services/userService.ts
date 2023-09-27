@@ -66,7 +66,7 @@ export const signUp = async (data: SignUpITF, auth: AuthContextITF) => {
   auth.setIsLoading(true);
 
   try {
-    const apiResponse = await axios.post(`${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/auth/signup`, data);
+    const apiResponse = await axios.post(`${NEXT_PUBLIC_CLIENT_HOST}/api/auth/signup`, data);
 
     if (apiResponse.data.status === HttpStatusCodes.CREATED) {
       showNotification({
@@ -106,7 +106,7 @@ export const sendForgotPasswordEmail = async (data: { email: string }, auth: Aut
     auth.setIsLoading(true);
 
     try {
-      const apiResponse = await axios.post(`${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/auth/password/forgot/send`, data);
+      const apiResponse = await axios.post(`${NEXT_PUBLIC_CLIENT_HOST}/api/auth/password/forgot/send`, data);
 
       if (apiResponse.data.status === HttpStatusCodes.OK) {
         showNotification({
@@ -140,7 +140,7 @@ export const sendVerifyEmail = async (data: { email: string }, auth: AuthContext
     auth.setIsLoading(true);
 
     try {
-      const apiResponse = await axios.post(`${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/auth/verify/send`, data);
+      const apiResponse = await axios.post(`${NEXT_PUBLIC_CLIENT_HOST}/api/auth/verify/send`, data);
 
       if (apiResponse.data.status === HttpStatusCodes.OK) {
         showNotification({
@@ -191,7 +191,7 @@ export const updateProfile = async (data: UpdateProfileITF, user: UserITF, profi
     const email = user.email;
     const { username, avatar } = data;
 
-    const apiResponse = await axios.patch( `${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/profile`, { email, username, avatar });
+    const apiResponse = await axios.patch( `${NEXT_PUBLIC_CLIENT_HOST}/api/profile`, { email, username, avatar });
     if (apiResponse.data.status === HttpStatusCodes.OK) {
       showNotification({
         title,
@@ -238,7 +238,7 @@ export const changePassword = async (data: ChangePasswordITF, user: UserITF, pro
   try {
     const email = user.email;
     const apiResponse = await axios.post(
-      `${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/auth/password/change`,
+      `${NEXT_PUBLIC_CLIENT_HOST}/api/auth/password/change`,
       { email, oldPassword: data.old, newPassword: data.password }
     );
     if (apiResponse.data.status === HttpStatusCodes.OK) {
@@ -274,7 +274,7 @@ export const getLoungeUser = async (data: GetLoungeUserITF, dispatch: AppDispatc
     user = JSON.parse(localUser);
     dispatch(setLoungeUser(JSON.parse(localUser)));
   } else if (session) {
-    const apiResponse = await axios.get(`${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/user`, { params: { email: session!.user!.email } });
+    const apiResponse = await axios.get(`${NEXT_PUBLIC_CLIENT_HOST}/api/user`, { params: { email: session!.user!.email } });
     if (apiResponse.data.status === HttpStatusCodes.OK) {
       user = apiResponse.data.user;
       dispatch(setLoungeUser(user));
@@ -294,7 +294,7 @@ export const getLoungeUser = async (data: GetLoungeUserITF, dispatch: AppDispatc
 export const getUser = async (data: GetUserITF, dispatch: AppDispatch) => {
   let user = null;
   const { email } = data;
-  const apiResponse = await axios.get(`${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/user`, { params: { email } });
+  const apiResponse = await axios.get(`${NEXT_PUBLIC_CLIENT_HOST}/api/user`, { params: { email } });
   if (apiResponse.data.status === HttpStatusCodes.OK) {
     user = apiResponse.data.user;
     dispatch(setUser(user));
@@ -305,7 +305,7 @@ export const getUser = async (data: GetUserITF, dispatch: AppDispatch) => {
 export const getUserList = async (data: GetListITF, dispatch: AppDispatch) => {
   try {
     const apiResponse = await axios.get(
-      `${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/user-list`,
+      `${NEXT_PUBLIC_CLIENT_HOST}/api/user-list`,
       { params: data }
     );
     if (apiResponse.data.status === HttpStatusCodes.OK) {

@@ -16,7 +16,7 @@ import HttpStatusCodes from '@utils/constants/global/HttpStatusCodes';
 export const updateHistory = async (data: UpdateHistoryITF, dispatch: AppDispatch) => {
   try {
     const apiResponse = await axios.patch(
-      `${process.env.NEXT_PUBLIC_CLIENT_HOST}/api/history`,
+      `${NEXT_PUBLIC_CLIENT_HOST}/api/history`,
       data
     );
     if (['kick', 'leave'].includes(data.type) && apiResponse.data.status === HttpStatusCodes.OK) {

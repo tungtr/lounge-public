@@ -136,7 +136,7 @@ const OptionSection = () => {
       label: 'Logout',
       onClick: () => {
         localStorage.removeItem('lounge-user');
-        signOut({ callbackUrl: `${process.env.NEXT_PUBLIC_CLIENT_HOST}/` });
+        signOut({ callbackUrl: `${NEXT_PUBLIC_CLIENT_HOST}/` });
       }
     }
   ];
