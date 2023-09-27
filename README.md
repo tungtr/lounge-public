@@ -11,5 +11,5 @@
 - **Next.js:** Route handling & Back-end development.
 - **Mantine:** UI component library.
 - **Redux:** State management.
-- **Pusher:** Real-time third-party service.
+- **Pusher:** Third-party real-time service.
 - **MongoDB:** Database.
