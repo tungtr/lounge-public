@@ -15,7 +15,7 @@ export const PATCH = async (request: NextRequest) => {
   try {
     const { loungeId, order, newReaction } = await request.json();
 
-    pusherServer.trigger(loungeId, 'incoming-reaction', {
+    await pusherServer.trigger(loungeId, 'incoming-reaction', {
       order,
       reaction: {
         name: newReaction.name,

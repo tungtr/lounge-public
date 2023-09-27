@@ -101,7 +101,7 @@ export const POST = async (request: NextRequest) => {
       }
     }
 
-    pusherServer.trigger(loungeId, 'incoming-message', {
+    await pusherServer.trigger(loungeId, 'incoming-message', {
       order: messageTotal,
       user: {
         _id: user._id,
