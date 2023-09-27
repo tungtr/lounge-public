@@ -25,7 +25,7 @@ const Verify = ({
 
   const verifyAccount = async () => {
     try {
-      const apiResponse = await axios.post(`${NEXT_PUBLIC_CLIENT_HOST}/api/auth/verify`, { token });
+      const apiResponse = await axios.post(`/api/auth/verify`, { token });
       if (apiResponse.data.status === HttpStatusCodes.OK) {
         setStatus('success');
       }
@@ -44,7 +44,7 @@ const Verify = ({
 
     const { user }: any = jwt_decode(token);
     try {
-      const apiResponse = await axios.post(`${NEXT_PUBLIC_CLIENT_HOST}/api/auth/verify/send`, { email: user.email });
+      const apiResponse = await axios.post(`/api/auth/verify/send`, { email: user.email });
       if (apiResponse.data.status === HttpStatusCodes.OK) {
         showNotification({
           title,

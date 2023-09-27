@@ -33,7 +33,7 @@ export const getLounge = async (data: GetLoungeITF, dispatch: AppDispatch, route
     }
 
     const apiResponse = await axios.get(
-      `${NEXT_PUBLIC_CLIENT_HOST}/api/lounge`,
+      `/api/lounge`,
       { params: {
         id
       }}
@@ -50,7 +50,7 @@ export const getLounge = async (data: GetLoungeITF, dispatch: AppDispatch, route
 export const getLoungeList = async (data: GetLoungeListITF, dispatch: AppDispatch) => {
   try {
     const apiResponse = await axios.get(
-      `${NEXT_PUBLIC_CLIENT_HOST}/api/lounge-list`,
+      `/api/lounge-list`,
       { params: data }
     );
     if (apiResponse.data.status === HttpStatusCodes.OK) {
@@ -68,7 +68,7 @@ export const getMemberCollection = async (data: GetLoungeMemberListITF, dispatch
     const { loungeId } = data;
 
     const apiResponse = await axios.get(
-      `${NEXT_PUBLIC_CLIENT_HOST}/api/lounge/member-list`,
+      `/api/lounge/member-list`,
       { params: {
         loungeId
       }}
@@ -98,7 +98,7 @@ export const createLounge = async (data: CreateLoungeITF, lounge: LoungeContextI
       const adminId = JSON.parse(localUser)._id;
 
       const apiResponse = await axios.post(
-          `${NEXT_PUBLIC_CLIENT_HOST}/api/lounge`,
+          `/api/lounge`,
           { name, subjectId, visibility, description, adminId }
         );
       if (apiResponse.data.status === HttpStatusCodes.CREATED) {
@@ -140,7 +140,7 @@ export const joinLounge = async (data: JoinLoungeITF, lounge: LoungeContextITF, 
     const userId = JSON.parse(localUser)._id;
 
     const apiResponse = await axios.post(
-      `${NEXT_PUBLIC_CLIENT_HOST}/api/lounge/join`,
+      `/api/lounge/join`,
       { joinCode, userId }
     );
     if (apiResponse.data.status === HttpStatusCodes.OK) {
@@ -192,7 +192,7 @@ export const updateLounge = async (data: UpdateLoungeITF, lounge: LoungeContextI
       });
     } else {
       const apiResponse = await axios.patch(
-        `${NEXT_PUBLIC_CLIENT_HOST}/api/lounge`,
+        `/api/lounge`,
         data
       );
       if (apiResponse.data.status === HttpStatusCodes.OK) {
@@ -227,7 +227,7 @@ export const checkIsMember = async (data: IsMemberITF) => {
     const { id, userId } = data;
 
     const apiResponse = await axios.get(
-      `${NEXT_PUBLIC_CLIENT_HOST}/api/lounge/member/is-member`,
+      `/api/lounge/member/is-member`,
       { params: {
         id, userId
       }}
@@ -245,7 +245,7 @@ export const getRole = async (data: IsMemberITF) => {
     const { id, userId } = data;
 
     const apiResponse = await axios.get(
-      `${NEXT_PUBLIC_CLIENT_HOST}/api/lounge/member/role`,
+      `/api/lounge/member/role`,
       { params: {
         id, userId
       }}
@@ -280,7 +280,7 @@ export const updateMember = async (data: UpdateMemberITF, dispatch: AppDispatch)
 
   try {
     const apiResponse = await axios.patch(
-      `${NEXT_PUBLIC_CLIENT_HOST}/api/lounge/member`,
+      `/api/lounge/member`,
       data
     );
     if (apiResponse.data.status === HttpStatusCodes.OK) {
