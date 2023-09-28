@@ -72,7 +72,6 @@ const Chatbox = () => {
   // Reversed list
   const onAutoLoadMore = async () => {
     if (messageListTotal > Globals.DEFAULT_MESSAGE_LIST_LIMIT && messageList.length < Globals.DEFAULT_MESSAGE_LIST_LIMIT) {
-      console.log('not enough load more')
       await onGetMessageList(false);
       dispatch(setNaviReplyTrigger(!naviReplyTrigger));
     }
@@ -109,7 +108,6 @@ const Chatbox = () => {
   };
   useEffect(() => {
     if (!loadMore) return;
-    console.log('load more');
     onLoadMore(isLoadMorePrior);
   }, [loadMore]);
 
@@ -131,7 +129,6 @@ const Chatbox = () => {
   useEffect(() => {
     setTimeout(() => {
       if (!replyRef || !replyRef.current || !messageList.map(message => message.order).includes(naviReplyOrder)) return;
-      console.log('navi activate');
       replyRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 100);
   }, [naviReplyTrigger]);

@@ -42,7 +42,6 @@ export const PATCH = async (request: NextRequest) => {
 
         // Remove user from reaction if they have already reacted
         if (members.find((member: any) => member.email === user.email)) {
-          console.log('member removed from reaction')
           const userIdx = members.map((member: any) => member.email).indexOf(user.email);
           const newReactions = [
             ...message.reactions.slice(0, idx),
@@ -56,14 +55,12 @@ export const PATCH = async (request: NextRequest) => {
           message.reactions = newReactions;
           // Remove the reaction if there's no user left
           if (message.reactions[idx].memberList.length === 0) {
-            console.log('reaction removed from message')
             const reactions = message.reactions;
             message.reactions = [...reactions.slice(0, idx), ...reactions.slice(idx + 1)];
           }
         } 
         // New member
         else {
-          console.log('new member in reaction');
           const newReactions = [
             ...message.reactions.slice(0, idx),
             {
@@ -76,11 +73,9 @@ export const PATCH = async (request: NextRequest) => {
           message.reactions = newReactions;
         }
       } else {
-        console.log('new reaction in message')
         message.reactions = [...message.reactions, newReactionObject];
       }
     } else {
-      console.log('init reaction in message')
       message.reactions = [newReactionObject];
     }
     await message.save();

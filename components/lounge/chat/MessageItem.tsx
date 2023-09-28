@@ -230,7 +230,6 @@ const MessageItem = ({
           {gif &&
             <Gif gif={gif}
               borderRadius={8} width={gifWidth}
-              noLink={true} hideAttribution={true}
             />
           }
           {reactionList.length > 0 && 

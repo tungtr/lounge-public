@@ -11,7 +11,6 @@ import { connectToMongoDB } from '@utils/helpers/mongodb';
 
 export const GET = async (request: NextRequest) => {
   try {
-    console.log('1');
     const id = request.nextUrl.searchParams.get('id');
     const userId = request.nextUrl.searchParams.get('userId');
 
@@ -21,7 +20,6 @@ export const GET = async (request: NextRequest) => {
     }
 
     await connectToMongoDB();
-    console.log('a');
 
     let loungeQuery = { _id: new mongoose.Types.ObjectId(id) };
     const lounge = await Lounge.findOne(loungeQuery);
@@ -29,7 +27,6 @@ export const GET = async (request: NextRequest) => {
       const status = HttpStatusCodes.NOT_FOUND;
       return NextResponse.json({ message: 'Lounge does not exist', status }, { status });
     }
-    console.log('b');
 
     let userExists = lounge.adminId.toString() === userId;
     if (!userExists) userExists = lounge.memberIds.find((memberId: string) => memberId === userId);
