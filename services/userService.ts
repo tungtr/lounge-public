@@ -69,12 +69,22 @@ export const signUp = async (data: SignUpITF, auth: AuthContextITF) => {
     const apiResponse = await axios.post(`/api/auth/signup`, data);
 
     if (apiResponse.data.status === HttpStatusCodes.CREATED) {
-      showNotification({
-        title: auth.type.title,
-        message: 'Sign-up successful. Please check your email for verification',
-        status: 'success'
-      });
-      auth.setTemplateIdx(0);
+      const user = apiResponse.user;
+
+      // Create new history
+      const historyResponse = await axios.post(`/api/history`, { userId: user._id.toString() });
+      
+      // Send verification email
+      const emailResponse = await axios.post(`/api/auth/verify/send`, { email: user.email });
+
+      if (historyResponse.data.status === HttpStatusCodes.CREATED && emailResponse.data.status === HttpStatusCodes.OK) {
+        showNotification({
+          title: auth.type.title,
+          message: 'Sign-up successful. Please check your email for verification',
+          status: 'success'
+        });
+        auth.setTemplateIdx(0);
+      }
     } else {
       showNotification({
         title: auth.type.title,
