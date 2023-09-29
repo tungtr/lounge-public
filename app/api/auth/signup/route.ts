@@ -36,7 +36,10 @@ export const POST = async (request: NextRequest) => {
     }
   } catch (error) {
     return NextResponse.json(
-      { message: 'Encountered error during user sign-up' },
+      {
+        message: 'Encountered error during user sign-up',
+        error
+      },
       { status: HttpStatusCodes.INTERNAL_SERVER_ERROR }
     );
   }
