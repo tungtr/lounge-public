@@ -69,7 +69,7 @@ export const signUp = async (data: SignUpITF, auth: AuthContextITF) => {
     const apiResponse = await axios.post(`/api/auth/signup`, data);
 
     if (apiResponse.data.status === HttpStatusCodes.CREATED) {
-      const user = apiResponse.user;
+      const user = apiResponse.data.user;
 
       // Create new history
       const historyResponse = await axios.post(`/api/history`, { userId: user._id.toString() });
