@@ -1,3 +1,9 @@
+// Essentials
+import Head from 'next/head';
+
+// Assets
+import favicon from '@public/favicon.ico';
+
 // Components - Relative
 import SessionProvider from '@utils/context/Provider';
 import RootStyleRegistry from './emotion';
@@ -12,10 +18,7 @@ import '@styles/theme/typography.css';
 
 export const metadata = {
   title: 'Lounge',
-  description: 'Join lounges and have a chat',
-  icons: {
-    icon: '/favicon.ico'
-  }
+  description: 'Join lounges and have a chat'
 };
 
 const RootLayout = ({
@@ -25,7 +28,9 @@ const RootLayout = ({
 }) => {
   return (
     <html lang='en-UK'>
-      <head />
+      <Head>
+        <link rel='icon' href={favicon.src} type='image/x-icon' />
+      </Head>
       <body>
         <SessionProvider>
           <main>
