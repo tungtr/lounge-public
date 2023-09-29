@@ -30,8 +30,9 @@ export const POST = async (request: NextRequest) => {
     await sendMail({
       type: 'verify',
       to: email,
-      url: `verify?token=${token}`
+      url: `https://${process.env.NEXTAUTH_URL}/verify?token=${token}`
     });
+
     const status = HttpStatusCodes.OK;
     return NextResponse.json({ message: 'Verification email sent', status }, { status });
   } catch (error) {
