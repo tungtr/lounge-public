@@ -26,7 +26,7 @@ export const POST = async (request: NextRequest) => {
     await sendMail({
       type: 'forgot-password',
       to: email,
-      url: `${process.env.NEXTAUTH_URL}/forgot-password?token=${token}`
+      url: `https://${process.env.NEXTAUTH_URL}/forgot-password?token=${token}`
     });
 
     const status = HttpStatusCodes.OK;
