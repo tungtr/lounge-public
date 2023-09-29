@@ -29,7 +29,7 @@ const RootLayout = ({
   return (
     <html lang='en-UK'>
       <Head>
-        <link rel='icon' href={favicon.src} type='image/x-icon' />
+        <link rel='icon' href='/favicon.ico' sizes='any' />
       </Head>
       <body>
         <SessionProvider>
