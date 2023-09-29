@@ -12,7 +12,10 @@ import '@styles/theme/typography.css';
 
 export const metadata = {
   title: 'Lounge',
-  description: 'Join lounges and have a chat'
+  description: 'Join lounges and have a chat',
+  icons: {
+    icon: '/favicon.ico'
+  }
 };
 
 const RootLayout = ({
