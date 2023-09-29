@@ -32,7 +32,6 @@ export const POST = async (request: NextRequest) => {
       to: email,
       url: `verify?token=${token}`
     });
-
     const status = HttpStatusCodes.OK;
     return NextResponse.json({ message: 'Verification email sent', status }, { status });
   } catch (error) {
