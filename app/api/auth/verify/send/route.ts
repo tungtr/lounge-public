@@ -30,7 +30,7 @@ export const POST = async (request: NextRequest) => {
     await sendMail({
       type: 'verify',
       to: email,
-      url: `${process.env.NEXTAUTH_URL}/verify?token=${token}`
+      url: 'verify?token=' + `${token}`
     });
 
     const status = HttpStatusCodes.OK;
