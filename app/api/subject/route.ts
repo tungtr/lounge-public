@@ -8,6 +8,8 @@ import Subject from '@models/Subject';
 import HttpStatusCodes from '@utils/constants/global/HttpStatusCodes';
 import { connectToMongoDB } from '@utils/helpers/mongodb';
 
+export const revalidate = 0;
+
 export const GET = async (request: NextRequest) => {
   try {
     await connectToMongoDB();
