@@ -16,6 +16,7 @@ import { Flex, Grid, Pagination, Stack } from '@mantine/core';
 
 // Services
 import { useAppDispatch, useAppSelector } from '@services/redux/hooks';
+import { setLounge } from '@services/redux/reducers/loungeReducer';
 import { getUserList } from '@services/userService';
 
 // Styling
@@ -27,6 +28,11 @@ import LoaderContext from '@utils/context/LoaderContext';
 const UsersPage = () => {
   const dispatch = useAppDispatch();
   const loader = useContext(LoaderContext);
+
+  // Initialization handling
+  useEffect(() => {
+    dispatch(setLounge(null));
+  }, []);
 
   // Chip handling
   const loungeUser = useAppSelector(state => state.user.loungeUser);
