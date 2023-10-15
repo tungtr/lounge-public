@@ -1,5 +1,5 @@
 // Essentials
-import nodemailer, { smtpTransport } from 'nodemailer';
+import nodemailer from 'nodemailer';
 
 const mailOptions = ({
   type,
@@ -44,14 +44,14 @@ export const sendMail = async ({
   to: string,
   url: string
 }) => {
-  const transporter = nodemailer.createTransport(smtpTransport({
+  const transporter = nodemailer.createTransport({
     name: 'lounge-tungtr.vercel.app',
     service: 'gmail',
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASSWORD
     }
-  }));
+  });
 
   const result = await transporter.sendMail(mailOptions({ type, to, url }));
   return result;
